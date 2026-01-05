@@ -9,9 +9,9 @@ const server = app.listen(PORT, () => {
 
 /*
 En nuestro CLI Linux - Ubuntu (WSL) 
-cd "/mnt/c/Users/mauuu/OneDrive/Escritorio/CODERHOUSE/[ 85610 BACK-III SAB 11-30 ]/[ 85610 BACK-III CLASE ]/CLASE-01/CHILD-PROCESS"
+cd "/mnt/c/Users/mauuu/OneDrive/Escritorio/CODERHOUSE/85610 BACK-III LUNES 10-12/85610 Back-III CLASE/CLASE-01/CHILD-PROCESS"
 
-
+C:\Users\mauuu\OneDrive\Escritorio\CODERHOUSE\85610 BACK-III LUNES 10-12\85610 Back-III CLASE\CLASE-01\CHILD-PROCESS\index.js
 
 * Para ejecutar el servidor con PM2, primero asegúrate de tener PM2 instalado globalmente:
 * pm2 -v

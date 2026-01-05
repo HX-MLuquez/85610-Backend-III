@@ -2,7 +2,7 @@
 
 **Comisión 85610**  
 **Profesor:** Mauricio Gastón Lúquez  
-**TA:** 
+**TA:** Martín Alberti
 📅 **Inicio:** 05/01/2026 
 🕒 **Horario:** Lunes de 10:00 a 12:00 hs  
 🖥️ **Modalidad:** Virtual (Zoom)  
@@ -10,6 +10,33 @@
 📁 [Repositorio del curso](https://github.com/HX-MLuquez/85610-Backend-III.git)
 
 ---
+
+1. Recorrido del curso
+2. Herramientas y plataformas
+3. Nos presentamos 
+4. Se presentan ustedes 
+5. Temas del curso
+6. Entregas y proyecto final 
+7. Iniciamos con la clase 01
+
+
+---
+
+1. MODELO curso DIA a DIA 
+    - ASYNC
+    - SYNC 
+
+
+---
+
+#### Presentación:
+- nombre 
+- donde viven 
+- conocimientos en programación
+- dificultades que han tenido
+- random
+---
+
 
 ## 🛠️ Herramientas y Plataformas
 

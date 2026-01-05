@@ -1,0 +1,22 @@
+hola
+
+1. ¿Que es NEST?
+Francisca Bahamondes Walters 11:38
+un framework para hacer apps
+
+Amir Kalasnicoy  to  Everyone 11:38
+un framework para construir aplicaciones backend
+
+Diego Di Lonardo 11:38
+1 - Es un Framework
+
+Framework -> JS <- 
+core NEST -> 
+    TS + Express + POO + Escalable + Muy modular muy estructurado + MODULOS 
+
+2. ¿Como utilizar?
+Documentación oficial 
+Instalar globalmente nest cli 
+
+nest new
+3. ¿Por que usar o parender NEST?

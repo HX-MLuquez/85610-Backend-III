@@ -3,4 +3,5 @@ const PORT = 3000;
 
 app.listen(PORT, () => {
   console.log(`Server escuchando en puerto http://localhost:${PORT}`);
+  throw new Error("Error de prueba en el servidor");
 });

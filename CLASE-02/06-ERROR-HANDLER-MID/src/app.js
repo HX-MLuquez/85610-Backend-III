@@ -40,7 +40,7 @@ class CustomError extends Error {
   constructor(message, code = 500, cause = null) {
     super(message); // Herencia -> Es para el constructor del padre -> Error(message)
     this.code = code;
-    this.cause = cause;
+    this.cause = cause; //* Una lista de la causa o todas las causas del error, ej: [{campo, detalle},{campo, detalle}]
     Error.captureStackTrace(this, this.constructor);
   }
 }

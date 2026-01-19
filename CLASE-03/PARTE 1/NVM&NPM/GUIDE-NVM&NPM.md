@@ -93,6 +93,20 @@ Con ^4.17.1, npm actualizará el paquete express a cualquier versión que sea co
 es decir, cualquier versión mayor o igual a 4.17.1 pero menor que 5.0.0. Esto incluye versiones como 
 4.17.2, 4.18.0, etc., pero no 5.0.0 o versiones mayores.
 
+4.17.1
+moment.diaActual -> 19/01/2026 - 10:54 AM - Lugar 
+-> ["19/01/2026", "10:54 AM", "Lugar"] <- dame el ultimo elemento -> "Lugar"
+
+
+4.17.8
+
+4.20.1
+moment.diaActual -> 19/01/2026 - 10:54 AM - Lugar - Milisegundos -> ["19/01/2026", "10:54 AM", "Lugar", 1705640040000] <- dame el ultimo elemento -> 1705640040000
+
+5.0.0
+moment.diaActual -> 19/01/2026 - 10:54 AM - Lugar - Milisegundos -> ["19/01/2026", "10:54 AM", "Lugar", 1705640040000] <- dame el ultimo elemento -> 1705640040000
+moment.diaActualS -> 10:54|19/01/2026|Lugar - Milisegundos
+
 
 express 5 --> 6
 
@@ -158,7 +172,7 @@ Instalamos una version especifica
 
 npm install express@4.21.2
 
-npm install moment@2.22.0
+
 npm install moment@2.30.0
 
 Para desinstalar un paquete
@@ -175,3 +189,17 @@ Actualizar una dependencia x
 npm update paquete
 
 npm update express
+
+
+# PNPM (alternativa a NPM)
+Instalación de PNPM
+npm install -g pnpm
+
+Crear un proyecto con PNPM
+pnpm init
+pnpm init -y
+
+Instalar dependencias con PNPM
+pnpm install express
+pnpm install moment
+

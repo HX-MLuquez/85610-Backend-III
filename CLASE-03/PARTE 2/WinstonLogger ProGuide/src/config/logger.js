@@ -12,7 +12,7 @@ import { config } from "./config.js";
 const nivelesPersonalizados = {
   levels: {
     grave: 0, // -> transport -> File
-    warn: 1,
+    warn: 1, 
     info: 2,
     leve: 3, // -> transport -> console
   },

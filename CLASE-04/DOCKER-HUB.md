@@ -25,6 +25,8 @@ docker build -t usuario/nombre-imagen .
 
 ```bash
 docker build -t mauricio776/mza-app-image:1.0.0 .
+
+docker build -t mauricio776/mza-yuju-image:1.0.0 .
 ```
 
 3. Creamos el tag de la versión que vamos a subir:
@@ -46,6 +48,8 @@ docker push mauricio776/nombre-imagen:1.0.0
 ```
 ```bash
 docker push mauricio776/mza-app-image:1.0.0
+
+docker push mauricio776/mza-yuju-image:1.0.0
 ```
 
 5. Verificamos que la imagen se haya subido correctamente:
@@ -58,4 +62,6 @@ docker images
 
 ```bash
 docker pull mauricio776/nombre-imagen:1.0.0
+
+docker pull mauricio776/mza-app-image:1.0.0
 ```

@@ -3,8 +3,9 @@
 - Para correr el proyecto en WSL2 UBUNTU
 
 ```bash
-cd /mnt/c/Users/mauuu/OneDrive/Escritorio/CODERHOUSE/74610\ BACK-III\ MARTES\ 19-00/74610\ Back-III\ CLASE/CLASE-04
+cd "/mnt/c/Users/mauuu/OneDrive/Escritorio/CODERHOUSE/85610 BACK-III LUNES 10-12/85610 Back-III CLASE/CLASE-04/CLUSTER"
 ```
+C:\Users\mauuu\OneDrive\Escritorio\CODERHOUSE\85610 BACK-III LUNES 10-12\85610 Back-III CLASE\CLASE-04\CLUSTER\GUIDE-CLUSTER.md
 
 - Para ver los cpu en windows
 ```bash

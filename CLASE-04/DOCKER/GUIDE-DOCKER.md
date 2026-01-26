@@ -1,5 +1,10 @@
 # DOCKER
 
+1. Instalar DOCKER
+2. Resgistrarse en Docker Hub
+
+11:14 volvemos!
+
 Para instalar vamos a:
 
 - Descargar el instalador de Docker Desktop desde la página oficial de Docker.
@@ -49,7 +54,7 @@ docker build -t app-hoy .
 ```
 
 ```bash
-docker build -t mza-app-image .
+docker build -t mza-yuju-image .
 ```
 
 Donde `-t` es para etiquetar la imagen y `.` indica que el Dockerfile está en el directorio actual.
@@ -63,7 +68,7 @@ docker images
 - Iniciar un contenedor:
 
 ```bash
-docker run -p 8080:3000 --name app-contenedor app-imagen
+docker run -p 8080:3000 --name mza-yuju-contenedor mza-yuju-image
 ```
 
 ```bash

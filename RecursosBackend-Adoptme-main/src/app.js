@@ -14,6 +14,19 @@ const connection = mongoose.connect(`mongodb://localhost:27017/db_example?direct
 app.use(express.json());
 app.use(cookieParser());
 
+//* Implementar middleware personalizado de cors para varios origenes - Back www.api-pepe.com
+app.use((req, res, next) => {
+    const allowedOrigins = ['http://localhost:3000', 'http://pepe.com'];
+    const origin = req.headers.origin;
+    if (allowedOrigins.includes(origin)) {
+        res.setHeader('Access-Control-Allow-Origin', origin);
+    }
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    res.setHeader('Access-Control-Allow-Credentials', 'true');
+    next();
+});
+
 app.use('/api/users',usersRouter);
 app.use('/api/pets',petsRouter);
 app.use('/api/adoptions',adoptionsRouter);

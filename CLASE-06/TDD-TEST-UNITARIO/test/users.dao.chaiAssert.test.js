@@ -1,6 +1,5 @@
 //* MOCHA + CHAI
 
-
 // *1. npm install mocha chai --save-dev
 // *2. Agregar en package.json el script:
 // * "test": "mocha ./test/**/*.test.js --exit"
@@ -37,6 +36,16 @@ import { expect } from "chai";
 import dotenv from "dotenv";
 dotenv.config();
 const { MONGO_URI } = process.env;
+import { describe, it, before, after } from "mocha";
+//   _____________________________________
+//* |         *** CODE AQUI ***           |
+//* |         before()                    |
+//  |_____________________________________|
+
+// -> before() --> Se ejecuta una sola vez ANTES de todos los test (ideal para setup general, como conectar a la DB)
+// -> after() --> Se ejecuta una sola vez DESPUÉS de todos los test (ideal para teardown general, como desconectar la DB)
+// -> beforeEach() --> Se ejecuta ANTES de CADA test (ideal para preparar datos específicos para cada prueba)
+// -> afterEach() --> Se ejecuta DESPUÉS de CADA test (ideal para limpiar datos específicos después de cada prueba)
 
 before(async () => {
   try {
@@ -48,7 +57,10 @@ before(async () => {
 });
 
 describe("Test unitarios CRUD para el DAO del Users con MOCHA + CHAI", function () {
-  this.timeout(5000); //* Va a tener una tolerancia de hasta 5 seg por it (por test)
+  //   _____________________________________
+  //* |         *** CODE AQUI ***           |
+  //  |_____________________________________|
+  this.timeout(5000);
   const daoUsers = new Users();
 
   //* Datos mock para reuso
@@ -59,6 +71,7 @@ describe("Test unitarios CRUD para el DAO del Users con MOCHA + CHAI", function 
     password: "abcd1234",
     // Por defecto tb toma role: "user" y pets: []
   };
+
   //* Limpieza posterior a cada test (garantiza independencia entre pruebas)
   //* ANTES (solo 1 vez para cada IT (it()))
   beforeEach(async () => {
@@ -76,50 +89,48 @@ describe("Test unitarios CRUD para el DAO del Users con MOCHA + CHAI", function 
 
   it("save() debe crear y devolver un usuario con _id", async () => {
     const result = await daoUsers.save(userMock);
+    // assert.ok(result._id, "Debe tener un _id");
+    // assert.equal(result.email, userMock.email);
+    // cretedUser = result
     expect(result).to.have.property("_id");
     expect(result.email).to.equal(userMock.email);
   });
-
-  // it("save() debe devolver un error al intentar crear un usuario con el mismo email", async () => {
-  //   await daoUsers.save(userMock);
-  //   try {
-  //     await daoUsers.save(userMock);
-  //   } catch (error) {
-  //     expect(error).to.exist;
-  //     expect(error.message).to.include("duplicate key error");
-  //   }
-
-  // });
-
   it("get() debe obtener un arreglo de usuarios", async () => {
     await daoUsers.save(userMock);
     const result = await daoUsers.get({});
+    // assert.ok(Array.isArray(result), "Debe devolver un array");
+    // assert.ok(result.length > 0, "Debe haber al menos un usuario");
     expect(result).to.be.an("array");
-    expect(result[0]).to.have.property("_id");
-    expect(result.length).to.be.greaterThan(0); // Al menos 1 usuario
+    expect(result.length).to.be.greaterThan(0);
   });
   it("getBy() debe obtener un único usuario por filtro", async () => {
     const user = await daoUsers.save(userMock);
     const result = await daoUsers.getBy({ email: userMock.email });
+    //   assert.ok(result, "Debe devolver un usuario");
+    //   assert.equal(result.email, userMock.email);
     expect(result).to.exist;
     expect(result.email).to.equal(userMock.email);
   });
-
   it("update() debe modificar un usuario existente", async () => {
     const user = await daoUsers.save(userMock);
     const dataUpdate = { last_name: "Rodriguez Sanches Lopez" };
     await daoUsers.update(user._id, dataUpdate);
     const userUpdate = await daoUsers.getBy({ _id: user._id });
+    // assert.equal(
+    //   userUpdate.last_name,
+    //   "Rodriguez Sanches Lopez",
+    //   "El apellido debe estar actualizado"
+    // );
     expect(userUpdate.last_name).to.equal("Rodriguez Sanches Lopez");
   });
 
   it("delete() debe eliminar un usuario por su id", async () => {
     const user = await daoUsers.save(userMock);
     const deleted = await daoUsers.delete(user._id);
-
-    // console.log("-----> deleted: ", deleted);
+    // assert.ok(deleted, "Debe devolver el documento eliminado");
     expect(deleted).to.exist;
     const found = await daoUsers.getBy({ _id: user._id });
     expect(found).to.be.null;
+    // assert.equal(found, null, "El usuario ya no debe existir");
   });
 });

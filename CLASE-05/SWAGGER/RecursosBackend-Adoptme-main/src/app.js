@@ -63,7 +63,7 @@ const swaggerOptions = {
 // Conectamos el server con el manifiesto .yaml
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
 
-// Conección y creación de nuestra Interface de Documentación
+//* MIDDELWARE - DOC Conección y creación de nuestra Interface de Documentación
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
 

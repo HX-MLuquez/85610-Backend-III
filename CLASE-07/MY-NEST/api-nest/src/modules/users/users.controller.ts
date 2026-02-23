@@ -49,4 +49,12 @@ export class UsersController {
   remove(@Param('id') id: string) {
     return this.usersService.remove(+id);
   }
+
+  @Get('config')
+  getConfig() {
+    return {
+      mongoUri: this.configService.get<string>('mongoUri'),
+      papa: this.configService.get<string>('papa'),
+    };
+  }
 }

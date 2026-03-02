@@ -50,7 +50,7 @@ export class UsersController {
     return this.usersService.remove(+id);
   }
 
-  @Get('config')
+  @Get('config/config')
   getConfig() {
     return {
       mongoUri: this.configService.get<string>('mongoUri'),
